@@ -22,7 +22,7 @@
 
     "requirejs": "2.0.6",
     "handlebars": "1.0.6-2",
-    "express": "2.5.9",
+    "express": "3.x",
 
     "stylus": "0.29.0",
     "nib": "0.8.2",

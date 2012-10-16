@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     var express = require("express");
 
     // If the server is already available use it.
-    var site = options.server ? options.server() : express.createServer();
+    var site = options.server ? options.server() : express();
 
     // Allow users to override the root.
     var root = _.isString(options.root) ? options.root : "/";
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
       });
     });
 
-    // Map static folders.
+    // Configure static folders.
     Object.keys(options.folders).sort().reverse().forEach(function(key) {
       site.get(root + key + "/*", function(req, res, next) {
         // Find filename.
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
       });
     });
 
-    // Map static files.
+    // Configure static files.
     if (_.isObject(options.files)) {
       Object.keys(options.files).sort().reverse().forEach(function(key) {
         site.get(root + key, function(req, res) {
@@ -122,6 +122,86 @@ module.exports = function(grunt) {
 
     // Serve favicon.ico.
     site.use(express.favicon(options.favicon));
+    
+
+    /**
+     * Start Nodetiles
+     */
+    var nodetiles = options.nodetiles; // Options
+    console.log(nodetiles);
+    var map = require('nodetiles');
+    var GeoJsonSource = map.datasources.GeoJson;
+    var PostGISSource = map.datasources.PostGIS;
+    var projector = map.projector;
+    
+    // create the map context
+    var map = new map.Map({
+      projection: nodetiles.projection
+    });
+    
+    // Serve the tiles
+    site.get('/tiles/:zoom/:col/:row.png', function tile(req, res) {
+      var tileCoordinate, bounds;
+  
+      // verify arguments
+      var tileCoordinate = [req.params.zoom, req.params.col, req.params.row].map(Number);
+      if (!tileCoordinate || tileCoordinate.length != 3) {
+        res.send(404, req.url + 'not a coordinate, match =' + tileCoordinate);
+        return;
+      }
+      // set the bounds and render
+      bounds = projector.util.tileToMeters(tileCoordinate[1], tileCoordinate[2], tileCoordinate[0]);
+      map.render(bounds[0], bounds[1], bounds[2], bounds[3], 256, 256, function(error, canvas) {
+        var stream = canvas.createPNGStream();
+        stream.pipe(res);
+      });
+    });
+    
+    // serve the utfgrid
+    site.get('/utfgrids/:zoom/:col/:row.:format?', function utfgrid(req, res) {
+      var tileCoordinate, respondWithImage, renderHandler, bounds;
+      
+      // verify arguments
+      var tileCoordinate = [req.params.zoom, req.params.col, req.params.row].map(Number);
+      if (!tileCoordinate || tileCoordinate.length != 3) {
+          res.send(404, req.url + 'not a coordinate, match =' + tileCoordinate);
+          return;
+      }
+    
+      respondWithImage = req.params.format === 'png';
+      if (respondWithImage) {
+        renderHandler = function(err, canvas) {
+          var stream = canvas.createPNGStream();
+          stream.pipe(res);
+        };
+      }
+      else {
+        renderHandler = function(err, grid) {
+          res.jsonp(grid);
+        };
+      }
+      
+      bounds = projector.util.tileToMeters(tileCoordinate[1], tileCoordinate[2], tileCoordinate[0], 64); // 
+      map.renderGrid(minX, minY, maxX, maxY, 64, 64, respondWithImage, renderHandler);
+    });
+    
+    
+    // Serve the tile.jsonp
+    site.get(root + 'tile.:format', function(req, res) {
+      if (req.params.format === 'json' || req.params.format === 'jsonp' ) {
+        fs.readFile(nodetiles.tilejson, 'utf8', function(err, contents) {
+          return res.jsonp(JSON.parse(contents));
+        });
+      }
+      else {
+        return req.next();
+      }
+    });
+    
+    
+    /**
+     * /End Nodetiles
+     */
     
     // Ensure all routes go home, client side app..
     site.all("*", function(req, res) {
