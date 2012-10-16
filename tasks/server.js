@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 
     // Ensure folders have correct defaults
     options.folders = _.defaults(options.folders, {
-      app: "./app",
+      map: "./map",
       assets: "./assets",
       dist: "./dist"
     });
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 
     // Ensure files have correct defaults
     options.files = _.defaults(options.files, {
-      "app/config.js": "app/config.js"
+      "map/config.js": "map/config.js"
     });
 
     // Run the server
