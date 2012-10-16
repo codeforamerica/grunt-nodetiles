@@ -1,6 +1,6 @@
-exports.description = "Backbone Boilerplate framework";
+exports.description = "Nodetiles framework";
 exports.notes = "This tool will help you install, configure, build, and "
-  + "maintain your Backbone Boilerplate project.";
+  + "maintain your Nodetiles slippy-map project.";
 
 // Any existing file or directory matching this wildcard will cause a warning.
 exports.warnOn = "*";
