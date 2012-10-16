@@ -35,7 +35,7 @@ function displayHelp() {
   var tasksList = Object.keys(grunt.task._tasks).slice(8);
 
   if (tasksList.length) {
-    displayTasks("Backbone Boilerplate", tasksList);
+    displayTasks("Nodetiles", tasksList);
   }
   
   if (gruntTasks.length) {

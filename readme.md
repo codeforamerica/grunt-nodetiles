@@ -1,44 +1,25 @@
-Backbone Boilerplate framework tool.
+Nodetiles framework tool.
 
 ## Getting Started ##
 
 Install this [Grunt](https://github.com/cowboy/grunt) plugin with:
-`npm install -g bbb`
+`npm install -g ntiles`
 
-To test installation, run the `bbb` command.  You should see something like
+To test installation, run the `ntiles` command.  You should see something like
 this:
 
 ![screenshot](https://github.com/backbone-boilerplate/grunt-bbb/raw/assets/screenshot.png)
 
-## Development ##
-
-If you wish to contribute or just want to install from source, simply run the
-following commands:
-
-``` bash
-# Clone the repository.
-git clone git://github.com/backbone-boilerplate/grunt-bbb.git
-
-# Change directory into it.
-cd grunt-bbb
-
-# Update all the submodules recursively.
-git submodule update --init --recursive
-
-# Allow bbb to be globally accessible.
-sudo npm link
-```
-
 ## Commands ##
 
-All commands are prefixed with `bbb` in your terminal.  For example the command
+All commands are prefixed with `ntiles` in your terminal.  For example the command
 `init` below would be executed like this:
 
 ``` bash
-$ bbb init
+$ ntiles init
 ```
 
-Tasks are defined inside the grunt-bbb project, but also borrowed from other
+Tasks are defined inside the grunt-nodetiles project, but also borrowed from other
 grunt projects: [grunt-contrib](https://github.com/gruntjs/grunt-contrib) &
 [grunt-jasmine-task](https://github.com/creynders/grunt-jasmine-task)
 
@@ -49,24 +30,24 @@ projects.
 
 These commands will build out files for you.
 
-#### `init` (bbb) ####
+#### `init` (ntiles) ####
 
 Creates a bare boilerplate project.
 
-#### `init:tutorial` (bbb) ####
+#### `init:tutorial` (ntiles) ####
 
 *Run bbb init before this command*
 
 Creates a boilerplate which contains the tutorial.
 
-#### `init:todomvc` (bbb) ####
+#### `init:todomvc` (ntiles) ####
 
 *Run bbb init before this command*
 
 Creates a boilerplate which contains the TodoMVC application that utilizes
 LayoutManager.
 
-#### `init:module` (bbb) ####
+#### `init:module` (ntiles) ####
 
 *Run bbb init before this command*
 
@@ -163,6 +144,25 @@ styles: {
     additional: ["assets/css/production-fixes.css"]
   }
 },
+```
+
+## Development ##
+
+If you wish to contribute or just want to install from source, simply run the
+following commands:
+
+``` bash
+# Clone the repository.
+git clone git://github.com/codeforamerica/grunt-nodetiles.git
+
+# Change directory into it.
+cd grunt-nodetiles
+
+# Update all the submodules recursively.
+git submodule update --init --recursive
+
+# Allow ntiles to be globally accessible.
+sudo npm link
 ```
 
 ## License

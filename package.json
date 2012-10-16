@@ -1,19 +1,19 @@
 {
-  "name": "bbb",
-  "description": "Backbone Boilerplate Build Tool",
-  "version": "0.1.13",
-  "homepage": "https://github.com/backbone-boilerplate/grunt-bbb",
+  "name": "ntiles",
+  "description": "Nodetiles Build Tool",
+  "version": "0.0.1",
+  "homepage": "https://github.com/codeforamerica/grunt-nodetiles",
   "author": {
-    "name": "Tim Branyen (@tbranyen)",
-    "email": "tim@tabdeveloper.com",
-    "url": "http://tbranyen.com"
+    "name": "Ben Sheldon (@bensheldon)",
+    "email": "ben@codeforamerica.org",
+    "url": "http://codeforamerica.org"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/backbone-boilerplate/grunt-bbb.git"
+    "url": "git://github.com/codeforamerica/grunt-nodetiles.git"
   },
   "bugs": {
-    "url": "https://github.com/backbone-boilerplate/grunt-bbb/issues"
+    "url": "https://github.com/codeforamerica/grunt-nodetiles/issues"
   },
   "dependencies": {
     "grunt": "0.3.15",
@@ -36,7 +36,7 @@
     "node": ">= 0.6.0"
   },
   "main": "grunt.js",
-  "bin": "bin/bbb",
+  "bin": "bin/ntiles",
   "scripts": {
     "test": "grunt test"
   }
