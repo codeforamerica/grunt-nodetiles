@@ -1,5 +1,5 @@
 {
-  "name": "ntiles",
+  "name": "nodetiles",
   "description": "Nodetiles Build Tool",
   "version": "0.0.1",
   "homepage": "https://github.com/codeforamerica/grunt-nodetiles",
@@ -38,7 +38,7 @@
     "node": ">= 0.6.0"
   },
   "main": "grunt.js",
-  "bin": "bin/ntiles",
+  "bin": "bin/nodetiles",
   "scripts": {
     "test": "grunt test"
   }
