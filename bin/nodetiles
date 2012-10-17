@@ -8,7 +8,7 @@ grunt.npmTasks([
   // Load grunt-jasmine-task used for testing Jasmine.
   "grunt-jasmine-task",
   // Load the remaining tasks (init/server/requirejs) from ntiles.
-  "ntiles"
+  "nodetiles"
 ]);
 
 // Draw the help screen.

@@ -3,20 +3,20 @@ Nodetiles framework tool.
 ## Getting Started ##
 
 Install this [Grunt](https://github.com/cowboy/grunt) plugin with:
-`npm install -g ntiles`
+`npm install -g nodetiles`
 
-To test installation, run the `ntiles` command.  You should see something like
+To test installation, run the `nodetiles` command.  You should see something like
 this:
 
 ![screenshot](https://github.com/backbone-boilerplate/grunt-bbb/raw/assets/screenshot.png)
 
 ## Commands ##
 
-All commands are prefixed with `ntiles` in your terminal.  For example the command
+All commands are prefixed with `nodetiles` in your terminal.  For example the command
 `init` below would be executed like this:
 
 ``` bash
-$ ntiles init
+$ nodetiles init
 ```
 
 Tasks are defined inside the grunt-nodetiles project, but also borrowed from other
@@ -30,28 +30,9 @@ projects.
 
 These commands will build out files for you.
 
-#### `init` (ntiles) ####
+#### `init` (nodetiles) ####
 
 Creates a bare boilerplate project.
-
-#### `init:tutorial` (ntiles) ####
-
-*Run bbb init before this command*
-
-Creates a boilerplate which contains the tutorial.
-
-#### `init:todomvc` (ntiles) ####
-
-*Run bbb init before this command*
-
-Creates a boilerplate which contains the TodoMVC application that utilizes
-LayoutManager.
-
-#### `init:module` (ntiles) ####
-
-*Run bbb init before this command*
-
-Creates a new module in the `app/modules` directory.
 
 ### Maintenence ###
 
@@ -161,7 +142,7 @@ cd grunt-nodetiles
 # Update all the submodules recursively.
 git submodule update --init --recursive
 
-# Allow ntiles to be globally accessible.
+# Allow nodetiles to be globally accessible.
 sudo npm link
 ```
 
