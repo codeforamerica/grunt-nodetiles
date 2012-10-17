@@ -28,7 +28,7 @@
     "nib": "0.8.2",
     "cssom": "0.2.5",
     
-    "nodetiles": "git://github.com/codeforamerica/nodetiles.git"
+    "nodetiles-core": "git://github.com/codeforamerica/nodetiles-core.git"
   },
   "devDependencies": {
     "grunt": "~0.3.14"
