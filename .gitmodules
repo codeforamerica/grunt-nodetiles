@@ -1,3 +1,3 @@
 [submodule "tasks/init/ntiles/root"]
 	path = tasks/init/ntiles/root
-	url = git://github.com/codeforamerica/nodetiles-server.git
+	url = git://github.com/codeforamerica/nodetiles-init.git
