@@ -134,7 +134,7 @@ following commands:
 
 ``` bash
 # Clone the repository.
-git clone git://github.com/codeforamerica/grunt-nodetiles.git
+git clone git://github.com/nodetiles/grunt-nodetiles.git
 
 # Change directory into it.
 cd grunt-nodetiles

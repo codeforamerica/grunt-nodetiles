@@ -2,7 +2,7 @@
   "name": "nodetiles",
   "description": "Nodetiles Build Tool",
   "version": "0.0.1",
-  "homepage": "https://github.com/codeforamerica/grunt-nodetiles",
+  "homepage": "https://github.com/nodetiles/grunt-nodetiles",
   "author": {
     "name": "Ben Sheldon (@bensheldon)",
     "email": "ben@codeforamerica.org",
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/codeforamerica/grunt-nodetiles.git"
+    "url": "git://github.com/nodetiles/grunt-nodetiles.git"
   },
   "bugs": {
-    "url": "https://github.com/codeforamerica/grunt-nodetiles/issues"
+    "url": "https://github.com/nodetiles/grunt-nodetiles/issues"
   },
   "dependencies": {
     "grunt": "0.3.15",
@@ -28,7 +28,7 @@
     "nib": "0.8.2",
     "cssom": "0.2.5",
     
-    "nodetiles-core": "git://github.com/codeforamerica/nodetiles-core.git"
+    "nodetiles-core": "~0.0.2"
   },
   "devDependencies": {
     "grunt": "~0.3.14"
